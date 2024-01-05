@@ -1,0 +1,30 @@
+﻿@page "{email}/AppIdea"
+@model CodexAppSuggestion.Pages.AddAppIdeaModel
+@{
+}
+
+
+<section class="col-md-6 mx-auto">
+    <h5 class="my-4">Submit App Design Idea</h5>
+    <form method="post" enctype="multipart/form-data">
+       
+        <div class="form-group">
+            <label for="Title" class="text-secondary h6">Title:</label>
+            <input type="text" class="form-control rounded-2" asp-for="Title" placeholder="Name your idea.">
+        </div>
+        <div class="form-group">
+            <label for="Category" class="text-secondary h6">Idea Category:</label>
+            <input type="text" class="form-control rounded-2" asp-for="Category" placeholder="Type of App you are creating">
+        </div>
+        <div class="form-group">
+            <label for="AppIdea" class="text-secondary h6">Your Ideas:</label>
+            <textarea class="form-control rounded-2" rows="8" cols="20" asp-for="AppIdea"></textarea>
+        </div>
+        <div class="d-flex align-items-center justify-content-start mt-4">
+            <button class="btn btn-success" type="submit" asp-page-handler="userIdea">Submit</button>
+        </div>
+    </form>
+</section>
+
+
+

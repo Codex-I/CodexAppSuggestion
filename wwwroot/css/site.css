@@ -1,0 +1,209 @@
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+}
+
+.welcome-section {
+    min-height: 100vh;
+}
+
+.welcome-background {
+    background-image: url('../lib/Images/login.svg') !important;
+    opacity: 0.8 !important;
+    background-position: center;
+    background-size: initial;
+    background-blend-mode: overlay !important;
+    background-repeat: no-repeat;
+}
+
+
+/*view ideas css*/
+
+.view-h3:hover {
+    color: hsl(180, 29%, 50%);
+}
+
+
+.view-label {
+    background-color: hsl(180, 29%, 50%);
+    width: 9rem!important;
+}
+
+.black {
+    background-color: black;
+    width: 5rem;
+}
+
+
+.unread {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 3%;
+    border-left: 5px solid hsl(180, 29%, 50%);
+    border-radius: 5px;
+    background-color: white;
+    box-shadow: 3px 4px 7px hsl(180deg 32% 75%);
+}
+
+
+
+.details {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+
+.scnd-item {
+    width: 100%;
+}
+
+.thir-item {
+    display: flex;
+    gap: 6px;
+    width: 100%;
+    justify-content: flex-start;
+}
+
+.filter {
+    display: flex;
+    gap: 3%;
+    width: 35%;
+    justify-content: flex-end;
+    font-weight: 700;
+}
+
+    .filter :hover {
+        background-color: hsl(180, 29%, 50%);
+        color: white;
+        cursor: pointer;
+    }
+
+    .filter div {
+        color: darkcyan;
+        font-size: 13px;
+        background-color: aliceblue;
+        padding: 5px;
+        border-radius: 4px;
+    }
+
+.read {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 3%;
+    border-radius: 5px;
+    background-color: white;
+    box-shadow: 3px 4px 7px hsl(180, 32%, 75%);
+}
+
+@media only screen and (max-width: 740px) {
+    header {
+        width: 100%;
+        padding: 10vh;
+        background-image: url(../images/bg-header-mobile.svg);
+        background-position: bottom;
+    }
+
+    main {
+        margin: 20px auto;
+        gap: 3em;
+    }
+
+    .unread,
+    .read {
+        align-items: flex-start;
+        display: flex;
+        flex-direction: column;
+        padding: 5%;
+        gap: 15px;
+    }
+
+    .first-item {
+        gap: 11px;
+    }
+
+    .info {
+        display: flex;
+        flex-direction: column;
+        width: auto;
+        align-items: flex-start;
+        gap: 13px;
+    }
+
+    .filter {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 7%;
+        width: 94%;
+        justify-content: flex-start;
+        padding-top: 15px;
+        border-top: 1px solid grey;
+    }
+
+    .filter div {
+        margin-bottom: 10px;
+        font-size: 15px;
+    }
+
+    .details {
+        gap: 10px;
+    }
+
+    img {
+        width: 30%;
+        margin-top: -39px;
+    }
+
+    h3 {
+        font-size: 15px;
+    }
+
+    p {
+        font-size: 15px;
+    }
+}
+
+@media screen and (max-width: 1182px) and (min-width: 769px) {
+    main {
+        padding: 40px;
+    }
+
+    .info {
+        gap: 3%;
+        width: 46%;
+    }
+}
+
+@media screen and (max-width: 768px) and (min-width: 576px) {
+    .info {
+        width: 43%;
+    }
+
+    img {
+        width: 33%;
+    }
+
+    h5 {
+        font-size: 13px;
+    }
+
+    p {
+        font-size: 11px;
+    }
+}

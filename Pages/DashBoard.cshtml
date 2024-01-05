@@ -1,0 +1,51 @@
+﻿@page "{Email}"
+@model CodexAppSuggestion.Pages.DashBoardModel
+@{
+}
+<header>
+    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark border-bottom box-shadow mb-3">
+        <div class="container">
+            <a class="navbar-brand" asp-area="" asp-page="/Index">IdeaApp</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar-collapse collapse d-sm-inline-flex justify-content-end">
+                <ul class="navbar-nav gap-md-4 flex-grow-0">
+                    <li class="nav-item">
+                        <a class="nav-link fw-bold" asp-area="" asp-page="#">@Model.UserName</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link fw-bold" asp-area="" asp-page="/Index">Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
+
+<section class="d-flex flex-column gap-3 container-fluid align-items-center mt-5 mx-auto">
+    <h3 class="text-secondary">@Model.GreetingMessage @Model.UserName </h3>
+
+    <div class="d-flex flex-row col-md-6 gap-3 justify-content-center mt-5">
+        <a asp-page="./AppIdea" asp-route-Email="@Model.Email" class="col-lg-3 col-md-4 col-7 text-decoration-none">
+            <div class="card">
+                <div class="card-body text-center">
+                    <h5 class="card-title text-secondary">Add Idea</h5>
+                </div>
+            </div>
+        </a>
+        <a asp-page="./ViewIdeas" asp-route-Email="@Model.Email" class="col-lg-3 col-md-4 col-6 text-decoration-none">
+            <div class="card">
+                <div class="card-body text-center">
+                    <h5 class="card-title text-secondary">View Ideas</h5>
+                </div>
+            </div>
+        </a>
+    </div>
+
+
+    
+
+</section>

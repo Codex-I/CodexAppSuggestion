@@ -1,0 +1,68 @@
+﻿@page "{email}/ViewIdeas"
+@model CodexAppSuggestion.Pages.Shared.ViewIdeasModel
+@{
+}
+
+<header class="mb-5">
+    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark border-bottom box-shadow mb-5">
+        <div class="container">
+            <a class="navbar-brand" asp-area="" asp-page="/Index">IdeaApp</a>
+        </div>
+    </nav>
+</header>
+
+@if (Model.GetIdeas != null)
+{
+    @foreach (var idea in Model.GetIdeas)
+    {
+        <section class=" mx-5 mb-0 d-flex flex-column gap-3">
+            <a asp-page="./ViewFullIdea" asp-route-ID="@idea.Id" class="card-link text-decoration-none mb-5">
+                <section class="unread">
+                    <div class="d-flex">
+                        <div class="d-flex flex-column gap-2">
+                            <div class="">
+                                <label class="view-label text-light fw-bold text-center fs-6 p-1 rounded-pill">@idea.Category</label>
+                            </div>
+                            <div class="">
+                                <h3 class="fw-bold fs-5 text-secondary ">@idea.Title</h3>
+                            </div>
+                            <div class="d-flex gap-2">
+                                <p>@idea.DateCompleted</p>
+                                <p>.</p>
+                                <p>Full Time</p>
+                                <p>.</p>
+                                <p>USA only</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="filter">
+                        @*fix checkbox here*@
+                        <div>
+                            <label for="Completed" class="text-success">Completed</label>
+                            <input type="checkbox" class="text-success form-checkbox" id="#myCheckbox" asp-for="@Model.Completed">
+                        </div>
+                    </div>
+                </section>
+            </a>
+        </section>
+
+    }
+}
+@if (Model.GetIdeas == null)
+{
+    <h4 class="text-success fw-bold text-center">You haven't added any ideas yet</h4>
+}
+
+
+<script>
+    const checkbox = document.getElementById('myCheckbox');
+
+    checkbox.addEventListener('change', () => {
+
+        fetch('/OnPostHandlerMethod', {
+            method: 'POST',
+            body: { @Model.Completed: checkbox.checked }
+            });
+
+        });
+</script>
